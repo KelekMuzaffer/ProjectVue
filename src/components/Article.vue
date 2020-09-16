@@ -1,3 +1,4 @@
+<!--Ce component ne sert a rien ^^ -->
 <template>
   <div class="pagesArticles">
     <div class="ui four column grid">

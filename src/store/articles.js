@@ -1,5 +1,7 @@
 import ArticleApi from '../api/articles'
 
+// stockage des data centraliser est qui peut être appeler grace aux getter dans les views
+
 const FETCHING_ARTICLES = "FETCHING_ARTICLES",
     FETCHING_ARTICLES_SUCCESS = "FETCHING_ARTICLES_SUCCESS",
     FETCHING_ARTICLES_ERROR = "FETCHING_ARTICLES_ERROR";

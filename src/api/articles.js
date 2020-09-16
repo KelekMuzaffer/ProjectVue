@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+// call Api centraliser qui est utiliser dans store/articles.js
 export default {
     findAll() {
       return axios.get('https://localhost:8001/api/articles')

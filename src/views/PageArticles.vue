@@ -2,6 +2,7 @@
   <div class="articles">
     <h1>Les Articles</h1>
     <div class="ui four column grid">
+<!--      v-for sur le getter qui se trouve dans le computed-->
       <div class="column" v-for="article in articles " v-bind:key="article.id">
         <div class="ui card">
           <div class="content">
@@ -29,11 +30,8 @@
 
 export default {
   name: 'articleView',
-  data() {
-    return {
-      fArticles: null
-    };
-  },
+
+  // computed permet d'utiliser les getters du store'
   computed: {
     isLoading() {
       return this.$store.getters["articles/isLoading"];
@@ -51,6 +49,7 @@ export default {
       return this.$store.getters["articles/articles"];
     }
   },
+  // method created qui va executer la fonction findAll() present dans src/api/articles.js
   created() {
     this.$store.dispatch("articles/findAll");
   }
