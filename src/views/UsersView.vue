@@ -1,31 +1,25 @@
 <template>
-  <div class="users">
-    <div class="ui two column grid">
-      <div class="column" v-for="user in users" v-bind:key="user.id">
-        <div class="ui card">
-          <div class="content">
-            <div class="header">
-              <p> Email: {{ user.email }} </p>
-              <p> Id: {{ user.id }} </p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div>
+<!--    <AllUsers></AllUsers>-->
+    <div class="nav">
+       <ul>
+        <router-link to="/users/AllUsers"> Voir tous les users / </router-link>
+        <router-link to="/users/CreateUser"> Creez un user /  </router-link>
+        <router-link to="/users/AllUsers"> Login  </router-link>
+       </ul>
     </div>
 
+    <h1>Sous Vue</h1>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+// import AllUsers from "@/components/AllUsers";
+// export default {
+//   components: {AllUsers}
+// }
 export default {
-  name: 'UsersView',
-  computed: {
-    users() {
-      return this.$store.getters['users/users']
-    }
-  },
-  created() {
-    this.$store.dispatch("users/findAllUsers")
-  }
+
 }
 </script>

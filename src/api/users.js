@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 export default {
     findAllUsers() {
       return axios.get('https://localhost:8001/api/users')
@@ -9,7 +10,15 @@ export default {
                 return error
             })
     },
-    createUsers() {
-        axios.post('https://localhost:8001/api/users')
+    createUser(user){
+        axios.post('https://localhost:8001/api/users', {
+            email: user.email,
+            password: user.password
+
+        }).then( response => {
+            return response.data
+        }).catch( error  => {
+            return error
+        })
     }
 }
