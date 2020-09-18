@@ -3,7 +3,8 @@
     <div id="nav">
 <!--      Router link fait reference au route definie dans src/router/index.js-->
       <router-link to="/home">Home</router-link> |
-      <router-link to="/articles">Articles</router-link>
+      <router-link to="/articles">Articles</router-link> |
+      <router-link to="/users">Users</router-link>
     </div>
     <router-view/>
   </div>

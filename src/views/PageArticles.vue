@@ -31,11 +31,11 @@
 export default {
   name: 'articleView',
 
-  // computed permet d'utiliser les getters du store'
+  // computed permet d'appeler les getters du store'
   computed: {
     isLoading() {
-      return this.$store.getters["articles/isLoading"];
-    },
+      return this.$store.getters["articles/isLoading"]
+    } ,
     hasError() {
       return this.$store.getters["articles/hasError"];
     },
@@ -49,10 +49,19 @@ export default {
       return this.$store.getters["articles/articles"];
     }
   },
+  // 2 facons de faire soit une fonction direct, soit une methods + mounted() le rendue est le même
   // method created qui va executer la fonction findAll() present dans src/api/articles.js
   created() {
     this.$store.dispatch("articles/findAll");
   }
+  // methods:  {
+  //   FindArticle: function findAll() {
+  //     this.$store.dispatch("articles/findAll")
+  //   }
+  // },
+  // mounted() {
+  //     this.FindArticle()
+  // }
 }
 </script>
 
